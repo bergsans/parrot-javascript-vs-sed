@@ -35,13 +35,13 @@ function highlightWord(word, typeOfExpr) {
 }
 
 function highlight(input) {
-    for([regExType, expression] of Object.entries(regExps)) {
-        input = input.replace(
+    return Object.entries(regExps).reduce(
+        (newInput, [regExType, expression]) => newInput.replace(
             expression, 
-            (word) => highlightWord(word, regExType)
-        );
-    }
-    return input;
+            (w) => highlightWord(w, regExType)
+        ),
+        input
+    );
 }
 
 module.exports = highlight;
