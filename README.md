@@ -25,5 +25,7 @@ Try the syntax highlighter without adding it to PATH:
 
 ```
 alias say-code=$(pwd)/src/say-code
+
+say-code some-js-ish-style-src.js
 ```
 
