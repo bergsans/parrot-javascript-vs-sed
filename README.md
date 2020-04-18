@@ -25,13 +25,10 @@ Try the syntax highlighter without adding it to your environment:
 
 ```
 alias hi=$(pwd)/src/hi
-
-hi some-js-ish-style-src.js
-
-or
-
-cat some-js-ish-style-src.js | hi (or some other piping)
 ```
 
+![screenshot1.png](screenshot1.png)
+
+The same result can be achived by piping: `cat helpers.js | hi`.
 
 
