@@ -5,16 +5,16 @@ const highlight = require('./highlight.js');
 const sourceCodeRegExp = require('./source-code-reg-exp.js');
 
 if(process.argv.length !== 3) {
-    process.stdout.write('No input.\n');
+    console.log('No input.');
     process.exit(1);
 }
 
 function readFile(fileName) {
-	try {
-		return readFileSync(fileName, 'utf8');
-	} catch (errorMessage) {
-		throw new Error(errorMessage);
-	}
+    try {
+        return readFileSync(fileName, 'utf8');
+    } catch (errorMessage) {
+        throw new Error(errorMessage);
+    }
 }
 
 process.stdout.write(
