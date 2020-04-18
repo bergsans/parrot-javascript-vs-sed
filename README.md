@@ -13,7 +13,7 @@ PARROT JS - a Bash syntax highlighter for JavaScript
 The same result can be achived by piping: `cat helpers.js | hi`.
 
 
-## Setyp
+## Setup
 
 ```
 npm install
