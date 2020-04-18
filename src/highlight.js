@@ -21,7 +21,9 @@ const types = {
     doubleQuote: 'yellow',
     singleQuote: 'yellow',
     dynamicQuote: 'yellow',
-    integer: 'yellow'
+    integer: 'yellow',
+    inlineComment: 'cyan',
+    blockComment: 'cyan'
 };
 
 function highlightWord(word, typeOfExpr) {

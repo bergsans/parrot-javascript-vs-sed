@@ -6,12 +6,16 @@ const doubleQuote = /"(.*?)"/g;
 const singleQuote = /'(.*?)'/g;
 const dynamicQuote = /`(.*?)`/g;
 const integer = /^[0-9]*$/;
+const inlineComment = /(\/\/.*)/g;
+const blockComment  = /(\/\*.*\*\/)/g;
 
 module.exports = {
     keywords,
     doubleQuote,
     singleQuote,
     dynamicQuote,
-    integer
+    integer,
+    inlineComment,
+    blockComment
 };
 
