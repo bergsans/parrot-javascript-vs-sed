@@ -8,7 +8,7 @@
 PARROT JS - a Bash syntax highlighter for JavaScript
 ```
 
-![screenshot1.png](screenshot1.png =400x)
+![screenshot1.png](screenshot1.png)
 
 The same result can be achived by piping: `cat helpers.js | hi`.
 
