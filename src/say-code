@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
 const { readFileSync } = require('fs');
+const highlight = require('./highlight.js');
 const sourceCodeRegExp = require('./source-code-reg-exp.js');
 
 if(process.argv.length !== 3) {
@@ -14,10 +15,6 @@ function readFile(fileName) {
 	} catch (errorMessage) {
 		throw new Error(errorMessage);
 	}
-}
-
-function highlight(word) {
-    return `>${word}<`;
 }
 
 process.stdout.write(
