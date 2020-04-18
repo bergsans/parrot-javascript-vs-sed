@@ -1,3 +1,5 @@
+const regExps = require('./source-code-reg-exp.js');
+
 const ANSI_CODES = {
     black: 30,
     red: 31,
@@ -14,14 +16,32 @@ const ANSI_CODES = {
     ending: 'm'   
 };
 
-function highlight(word) {
+const types = {
+    keywords: 'purple',
+    doubleQuote: 'yellow',
+    singleQuote: 'yellow',
+    dynamicQuote: 'yellow',
+    integer: 'yellow'
+};
+
+function highlightWord(word, typeOfExpr) {
     const { 
         start,
-        purple,
         ending,
-    reset
+        reset
 } = ANSI_CODES;
-        return ''.concat(start, purple, ending, word, reset);
+    const color = types[typeOfExpr];
+    return ''.concat(start, ANSI_CODES[color], ending, word, reset);
+}
+
+function highlight(input) {
+    for([regExType, expression] of Object.entries(regExps)) {
+        input = input.replace(
+            expression, 
+            (word) => highlightWord(word, regExType)
+        );
+    }
+    return input;
 }
 
 module.exports = highlight;
