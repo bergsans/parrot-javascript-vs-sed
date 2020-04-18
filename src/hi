@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+
+const highlight = require('./highlight.js');
+const readFile = require('./helpers.js');
+
+function hi(code) {
+    const highlightedSourceCode = highlight(code);
+    process.stdout.write(highlightedSourceCode);
+}
+
+const FILE_IN_CALL = 3;
+if(process.argv.length === FILE_IN_CALL) {
+    let sourceCode = readFile(process.argv[2]);
+    hi(sourceCode);
+} else {
+    const stdin = process.openStdin();
+    let data = '';
+    stdin.on('data', (chunk) => data += chunk);
+    stdin.on('end', () => hi(data));
+}
+
