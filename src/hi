@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
+const { boxify, print } = require('foxy-dev-tools');
 const highlight = require('./highlight.js');
 const readFile = require('./helpers.js');
+const aboutParrotJS = require('./about-parrot-js.js');
 
 function hi(code) {
     const highlightedSourceCode = highlight(code);
@@ -12,6 +14,10 @@ const FILE_IN_CALL = 3;
 if(process.argv.length === FILE_IN_CALL) {
     let sourceCode = readFile(process.argv[2]);
     hi(sourceCode);
+} else if(process.stdin.isTTY !== undefined) { 
+    const boxifiedText = boxify(aboutParrotJS.split('\n'));
+    boxifiedText.forEach((ln) => print(ln, 'black', 'white'));
+    process.exit(1);
 } else {
     const stdin = process.openStdin();
     let data = '';
