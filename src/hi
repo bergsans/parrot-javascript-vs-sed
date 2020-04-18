@@ -7,12 +7,12 @@ const aboutParrotJS = require('./about-parrot-js.js');
 
 function hi(code) {
     const highlightedSourceCode = highlight(code);
-    process.stdout.write(highlightedSourceCode);
+    console.log(highlightedSourceCode);
 }
 
-const FILE_IN_CALL = 3;
-if(process.argv.length === FILE_IN_CALL) {
-    let sourceCode = readFile(process.argv[2]);
+const FILENAME_PROVIDED_IN_CALL = 3;
+if(process.argv.length === FILENAME_PROVIDED_IN_CALL) {
+    const sourceCode = readFile(process.argv[2]);
     hi(sourceCode);
 } else if(process.stdin.isTTY !== undefined) { 
     const boxifiedText = boxify(aboutParrotJS.split('\n'));
