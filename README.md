@@ -24,11 +24,14 @@ d88'   88bd88' `?88P'`88bd88'   88b  88bd88' `?88P'`88bd88'   88b  `?8b  `?888P'
 Try the syntax highlighter without adding it to your environment:
 
 ```
-alias say-code=$(pwd)/src/say-code
+alias hi=$(pwd)/src/hi
 
-say-code some-js-ish-style-src.js
+hi some-js-ish-style-src.js
+
+or
+
+cat some-js-ish-style-src.js | hi (or some other piping)
 ```
 
-Currently, it only highlight all reserved keywords of ES6 purple. :)
 
 
