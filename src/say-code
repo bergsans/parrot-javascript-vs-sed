@@ -1,26 +1,14 @@
 #!/usr/bin/env node
 
-const { readFileSync } = require('fs');
 const highlight = require('./highlight.js');
-const sourceCodeRegExp = require('./source-code-reg-exp.js');
+const readFile = require('./helpers.js');
 
-if(process.argv.length !== 3) {
+const FILE_IN_CALL = 3;
+if(process.argv.length !== FILE_IN_CALL) {
     console.log('No input.');
     process.exit(1);
 }
-
-function readFile(fileName) {
-    try {
-        return readFileSync(fileName, 'utf8');
-    } catch (errorMessage) {
-        throw new Error(errorMessage);
-    }
-}
-
-process.stdout.write(
-    readFile(process.argv[2]).replace(
-        sourceCodeRegExp, 
-        highlight
-    )
-);
+let sourceCode = readFile(process.argv[2]);
+const highlightedSourceCode = highlight(sourceCode);
+process.stdout.write(highlightedSourceCode);
 
