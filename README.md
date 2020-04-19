@@ -12,22 +12,13 @@ PARROT JS vs sed
 ![screenshot1.png](screenshot1.png)
 (From my machine, POP_OS!)
 
-This is a simplistic Bash JavaScript syntax highlighter. It doesn't use a parser, only regular expressions.
-Use it if you want, but if you need a good syntax highlighter for Bash you should look elsewhere. This project
-is only meant to compare two versions. One using JavaScript, one using sed.
+Often we use JavaScript or similar languages to solve small problems, too small problems. This is sometimes a mistake and this is an example. Compare my JavaScript solution with my sed solution. The sed/Bash-solution is very simple, but does the job.
 
-Often we use JavaScript or similar languages to solve small problems. This is sometimes a mistake and this is an example. Surely, we could make a more advanced syntax highlighter
-but this is advanced enough. Already with a simplistic solution, we have some
-quantity code.
+Surely, we could make a more advanced syntax highlighter but this is advanced enough. Already with a simplistic solution, we have some quantity code. Is it reasonable to use a language like JavaScript to solve this task, even if scaled it? Is JavaScript the right tool for the job? It depends on the scope, I guess.
 
-Is JavaScript the right tool for the job? It depends on the scope. If the scope is small
-my answer is no. Compare my JavaScript solution with my sed solution. The sed/Bash-solution
-is very simple, but does the job. 
+We could arge, this is an unrealistic project and that the project should've used a parser or more advanced regular expressions. This is true. But at the same time it's not hard to imagine cases when our scope is small and we still sometimes use JavaScript or Python. Perhaps we shouldn't?
 
-Also, if we make a (un-systematic though) benchmark using the
-gnu tool time we see a huge difference in performance. The sed-version is, when used on the example-file,
-close to 5-6 times faster *on my machine. However, we should not trust micro-benchmarks. But more importantly here,
-the difference in speed doesn't really matter in this context.
+Also, if we make a (un-systematic though) benchmark using the gnu tool time we see a huge difference in performance. The sed-version is, when used on a example-file in the GitHub-repo, close to 5-6 times faster on my machine. However, we should not trust micro-benchmarks. But I guess they communicate… something.
 
 `$ time ./hi-sed example-js-file.js` outputs,
 ```
