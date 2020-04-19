@@ -1,0 +1,36 @@
+#!/bin/sh
+
+if [ $# -eq 1 ] 
+    then
+    sed -E -f hi.sed $1
+    exit 0
+else
+    sed -E -f hi.sed
+    exit 0
+fi
+
+#elif [ ! $# -eq 0 ]
+    #then
+    #echo "
+#╔═══════════════════════════════════════════════╗
+#║                                               ║
+#║                                               ║
+#║    (@>                                        ║
+#║   {||                                         ║
+#║  --""--                                       ║
+#║    ||                                         ║
+#║    ||                                         ║
+#║                                               ║
+#║  PARROT JS                                    ║
+#║  - a Bash syntax highlighter for JavaScript   ║
+#║                                               ║
+#║  Usage:                                       ║
+#║                                               ║
+#║  1. hi some-file.js                           ║
+#║  2. cat some-file | hi                        ║
+#║                                               ║
+#║                                               ║
+#║                                               ║
+#╚═══════════════════════════════════════════════╝
+#"
+    #exit 1
